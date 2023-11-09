@@ -8,7 +8,7 @@ public class Main {
             String input = scanner.nextLine();
             String result = calc(input);
             System.out.println(result);
-            if (result.equalsIgnoreCase("Завершение работы")) {
+            if (result.equals("Завершение работы")) {
                 scanner.close();
                 break;
             }
