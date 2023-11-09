@@ -9,6 +9,7 @@ public class Main {
             String result = calc(input);
             System.out.println(result);
             if (result.equalsIgnoreCase("Завершение работы")) {
+                scanner.close();
                 break;
             }
         }
@@ -27,7 +28,7 @@ public class Main {
                 System.out.println("Неверный формат ввода, введите выражение в формате 'число оператор число'");
                 return "Завершение работы";
             }
-            char operator = parts[1].charAt(0);
+            String operator = parts[1];
             if (checkFormat(num1, num2)){
                 return checkOperator(num1, num2, operator);
             }else {
@@ -48,19 +49,19 @@ public class Main {
             }
         }
     }
-    public static String checkOperator(int num1, int num2, char operator) {
+    public static String checkOperator(int num1, int num2, String operator) {
         int result;
         switch (operator) {
-            case '+':
+            case "+":
                 result = num1 + num2;
                 break;
-            case '-':
+            case "-":
                 result = num1 - num2;
                 break;
-            case '*':
+            case "*":
                 result = num1 * num2;
                 break;
-            case '/':
+            case "/":
                 result = num1 / num2;
                 break;
             default:
